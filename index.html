@@ -89,7 +89,6 @@
     </style>
 </head>
 <body>
-    <div class="hearts" id="hearts"></div>
     
     <div class="container">
         <div class="card">
@@ -113,22 +112,23 @@
                         flower.classList.add('flower');
                         
                         // Tạo ngẫu nhiên loại hoa
-                        const flowerTypes = ['🌸', '🌺', '🌷', '🌹', '💐', '🏵️'];
+                        const flowerTypes = ['🌸', '🌺', '🌷', '🌹', '💐', '🏵️','🌻','🍀','🍃'];
                         const randomFlower = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
                         
                         flower.innerHTML = randomFlower;
+                        flower.style.top = Math.random() * 100 + 'vw';
                         flower.style.left = Math.random() * 100 + 'vw';
                         flower.style.fontSize = (Math.random() * 20 + 15) + 'px';
-                        flower.style.animationDuration = (Math.random() * 5 + 5) + 's';
-                        flower.style.animationDelay = (Math.random() * 5) + 's';
+                        flower.style.animationDuration = (Math.random() * 5 + 10) + 's';
+                        flower.style.animationDelay = (Math.random() * 2) + 's';
                         
                         document.body.appendChild(flower);
                         
                         // Xóa hoa sau khi hoàn thành animation
                         setTimeout(() => {
                             document.body.removeChild(flower);
-                        }, 2000);
-                    }, i * 300);
+                        }, 5000);
+                    }, i * 500);
                 }
             }
             
